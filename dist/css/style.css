@@ -146,17 +146,22 @@ input, select {
   align-items: center;
 }
 
+.l-hp {
+  display: flex;
+  flex-direction: column;
+}
+
 /**
  *   Object1
  * ======================= */
 /* Conponent -------------- */
 /* Project -------------- */
 .p-field {
-  width: 15rem;
+  width: 20rem;
 }
 
 .p-field__wrapper {
-  height: 15rem;
+  height: 20rem;
   position: relative;
 }
 
@@ -177,20 +182,21 @@ input, select {
 }
 
 .p-field__character {
-  height: 6rem;
+  height: 10rem;
 }
 
-.p-field__hp-bar {
-  height: 0.3em;
+.p-hp__box {
+  border: .05rem solid black;
+  width: 5.1rem;
+}
+
+.p-hp__bar {
+  height: 0.5em;
   width: 5rem;
 }
 
-.p-field__hp-bar.-view {
+.p-hp__bar.-view {
   background-color: greenyellow;
-}
-
-.p-field__hp-bar.-enemy {
-  order: -1;
 }
 
 /* Utillity -------------- */

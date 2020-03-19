@@ -1,17 +1,21 @@
 import * as React from "react"
 
-interface HpState {
-    MyHp: number;
-    EnemyHp: number;
-} 
-
-class Hp extends React.Component<{},HpState> {
-    constructor(props) {
-        super(props);
-        this.state = {
-            MyHp: 100,
-            EnemyHp: 100,
-        }
-    }
-
+interface HPProps {
+    Character: string;
+    HP: any,
 }
+
+class HP extends React.Component<HPProps,{}> {
+    render (){
+        return(
+            <div className="l-hp">
+                <p>HP:</p>
+                <div className="p-hp__box">
+                    <div className={`p-hp__bar -view ${this.props.Character}`} style = {this.props.HP}></div>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default HP;

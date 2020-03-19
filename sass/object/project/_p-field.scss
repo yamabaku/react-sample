@@ -1,7 +1,7 @@
 .p-field {
-    width: 15rem;
+    width: 20rem;
     &__wrapper {
-        height: 15rem;
+        height: 20rem;
         position: relative;
     }
     &__character-box {
@@ -18,16 +18,6 @@
         }
     }
     &__character {
-        height: 6rem;
-    }
-    &__hp-bar {
-        height: 0.3em;
-        width: 5rem;
-        &.-view {
-            background-color: greenyellow;
-        }
-        &.-enemy {
-            order: -1;
-        }
+        height: 10rem;
     }
 }

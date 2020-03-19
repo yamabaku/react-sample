@@ -1,0 +1,13 @@
+.p-hp {
+    &__box {
+        border: .05rem solid black;
+        width: 5.1rem;
+    }
+    &__bar {
+        height: 0.5em;
+        width: 5rem;
+        &.-view {
+            background-color: greenyellow;
+        }
+    }
+}
