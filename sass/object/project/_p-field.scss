@@ -1,0 +1,33 @@
+.p-field {
+    width: 15rem;
+    &__wrapper {
+        height: 15rem;
+        position: relative;
+    }
+    &__character-box {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        &.-my-character {
+            bottom: 0;
+            left: 0;
+        }
+        &.-enemy-character {
+            top: 0;
+            right: 0;
+        }
+    }
+    &__character {
+        height: 6rem;
+    }
+    &__hp-bar {
+        height: 0.3em;
+        width: 5rem;
+        &.-view {
+            background-color: greenyellow;
+        }
+        &.-enemy {
+            order: -1;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+/* breakpoints */
+$layout-width-inner: 1024px;
+$breakpoints: (
+  "sp": "(max-width: 767px)",
+  "tab": "(max-width: #{$layout-width-inner - 1px})",
+  "pc": "(max-width: #{$layout-width-inner})",
+  "pc_min": "(min-width: #{$layout-width-inner})",
+  "pc-tab": "(min-width: 767px)",
+  "tab_min": "(min-width: #{$layout-width-inner - 1px})",
+  "header": "(min-width: 811px)",
+  "sp1": "(max-width: 425px)",
+  "sp-tab": "(mix-width: 426px) and (max-width:767px)",
+);
+
+@mixin media($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
