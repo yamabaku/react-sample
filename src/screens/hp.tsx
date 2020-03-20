@@ -2,7 +2,7 @@ import * as React from "react"
 
 interface HPProps {
     Character: string;
-    HP: any,
+    HP: {},
 }
 
 class HP extends React.Component<HPProps,{}> {

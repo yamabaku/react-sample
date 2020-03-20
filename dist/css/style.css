@@ -157,7 +157,8 @@ input, select {
 /* Conponent -------------- */
 /* Project -------------- */
 .p-field {
-  width: 20rem;
+  width: 100%;
+  max-width: 30rem;
 }
 
 .p-field__wrapper {
@@ -171,12 +172,12 @@ input, select {
   align-items: center;
 }
 
-.p-field__character-box.-my-character {
+.p-field__character-box.-turtle {
   bottom: 0;
   left: 0;
 }
 
-.p-field__character-box.-enemy-character {
+.p-field__character-box.-rabbit {
   top: 0;
   right: 0;
 }
@@ -185,9 +186,23 @@ input, select {
   height: 10rem;
 }
 
+.p-field__button {
+  width: 5rem;
+  padding-bottom: .5rem;
+  padding-top: .5rem;
+  margin-left: 1rem;
+}
+
+.p-field__button.-view {
+  background-color: #888888;
+  color: #fff;
+  font-weight: bold;
+  -webkit-appearance: none;
+}
+
 .p-hp__box {
   border: .05rem solid black;
-  width: 5.1rem;
+  width: 5.15rem;
 }
 
 .p-hp__bar {

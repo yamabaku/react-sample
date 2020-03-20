@@ -1,5 +1,6 @@
 .p-field {
-    width: 20rem;
+    width: 100%;
+    max-width: 30rem;
     &__wrapper {
         height: 20rem;
         position: relative;
@@ -8,16 +9,28 @@
         position: absolute;
         display: flex;
         align-items: center;
-        &.-my-character {
+        &.-turtle {
             bottom: 0;
             left: 0;
         }
-        &.-enemy-character {
+        &.-rabbit {
             top: 0;
             right: 0;
         }
     }
     &__character {
         height: 10rem;
+    }
+    &__button {
+        width: 5rem;
+        padding-bottom: .5rem;
+        padding-top: .5rem;
+        margin-left: 1rem;
+        &.-view {
+            background-color: rgb(136, 136, 136);
+            color: #fff;
+            font-weight: bold;
+            -webkit-appearance: none;
+        }
     }
 }
