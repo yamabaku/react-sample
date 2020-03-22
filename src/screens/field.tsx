@@ -77,13 +77,13 @@ class Field extends React.Component<{},FieldState> {
                 <div className="p-field">
                     <div className="p-field__wrapper">
                         <div className="p-field__character-box -turtle">
-                            <img src="./images/kame.png" alt="キャラクターの画像" className="p-field__character -turtle"/>
+                            <img src="./images/turtle.png" alt="キャラクターの画像" className="p-field__character -turtle"/>
                             <HP Character = {turtle} HP = {TurtleHP} />
                             <button className="p-field__button -view" onClick = { () => this.TurtleAttack()}>たたかう</button>
                         </div>
                         <div className="p-field__character-box -rabbit">
                             <HP Character = {rabbit} HP = {RabbitHP} />
-                            <img src="./images/usagi.png" alt="キャラクターの画像" className="p-field__character -rabbit"/>
+                            <img src="./images/rabbit.png" alt="キャラクターの画像" className="p-field__character -rabbit"/>
                         </div>
                     </div>
                 </div>
