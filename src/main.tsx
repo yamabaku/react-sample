@@ -12,9 +12,9 @@ class App extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={GameStart} />
-          <Route path="/field/" component={Field} />
-          <Route path="/Trutle_win/" component={TrutleWin} />
-          <Route path="/Rabbit_win/" component={RabbitWin} />
+          <Route exact path="/field/" component={Field} />
+          <Route exact path="/Trutle_win/" component={TrutleWin} />
+          <Route exact path="/Rabbit_win/" component={RabbitWin} />
         </Switch>
       </BrowserRouter>
     );

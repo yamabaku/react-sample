@@ -1,6 +1,6 @@
 import * as React from "react"; 
-import HP from "./hp";
-import Comment from "./comment";
+import HP from "./HP";
+import Comment from "./Comment";
 
 interface FieldState {
     TurtleHP: number;
