@@ -20,17 +20,25 @@
     }
     &__character {
         height: 10rem;
+        &.-rabbit {
+            height: 8rem;
+        }
     }
     &__button {
-        width: 5rem;
-        padding-bottom: .5rem;
-        padding-top: .5rem;
+        -webkit-appearance: none;
+        display: inline-block;
+        border-radius: 4px;
         margin-left: 1rem;
+        padding: 0.25em 0.5em;
+        position: relative;
+        width: 5rem;
         &.-view {
-            background-color: rgb(136, 136, 136);
-            color: #fff;
+            background: #00BCD4;/*背景色*/
+            color: #fff;/*=背景色*/
+            box-shadow: inset 0 2px 0 rgba(255,255,255,0.2);
+            border-bottom: solid 2px #118e9e;
             font-weight: bold;
-            -webkit-appearance: none;
+            text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
         }
     }
 }

@@ -1,0 +1,8 @@
+.p-winner {
+    text-align: center;
+    &__text {
+        &.-view {
+            font-size: 2rem;
+        }
+    }
+}

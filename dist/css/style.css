@@ -140,15 +140,31 @@ input, select {
  *   Laysout
  * ======================== */
 .l-field {
-  width: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 .l-hp {
   display: flex;
   flex-direction: column;
+}
+
+.l-start {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.l-winner {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
 }
 
 /**
@@ -186,18 +202,29 @@ input, select {
   height: 10rem;
 }
 
+.p-field__character.-rabbit {
+  height: 8rem;
+}
+
 .p-field__button {
-  width: 5rem;
-  padding-bottom: .5rem;
-  padding-top: .5rem;
+  -webkit-appearance: none;
+  display: inline-block;
+  border-radius: 4px;
   margin-left: 1rem;
+  padding: 0.25em 0.5em;
+  position: relative;
+  width: 5rem;
 }
 
 .p-field__button.-view {
-  background-color: #888888;
+  background: #00BCD4;
+  /*背景色*/
   color: #fff;
+  /*=背景色*/
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2);
+  border-bottom: solid 2px #118e9e;
   font-weight: bold;
-  -webkit-appearance: none;
+  text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
 }
 
 .p-hp__box {
@@ -212,6 +239,49 @@ input, select {
 
 .p-hp__bar.-view {
   background-color: greenyellow;
+}
+
+.p-start__title.-view {
+  font-size: 3rem;
+}
+
+.p-start__button {
+  -webkit-appearance: none;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.25em 0.5em;
+  position: relative;
+}
+
+.p-start__button.-view {
+  color: #FFF;
+  background: #fd9535;
+  /*背景色*/
+  border-bottom: solid 2px #d27d00;
+  /*少し濃い目の色に*/
+  border-radius: 4px;
+  /*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+}
+
+.p-start__button:active {
+  border-bottom: solid 2px #fd9535;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.p-start__link {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.p-winner {
+  text-align: center;
+}
+
+.p-winner__text.-view {
+  font-size: 2rem;
 }
 
 /* Utillity -------------- */

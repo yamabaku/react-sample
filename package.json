@@ -1,11 +1,12 @@
 {
   "scripts": {
-    "start": "webpack-dev-server --hot --inline --watch-content-base --content-base ./dist --open-page index.html ",
+    "start": "webpack-dev-server --hot --inline --watch-content-base --content-base ./dist --open --history-api-fallback",
     "build": "webpack",
     "watch": "webpack -w",
     "gulp": "gulp sass:watch"
   },
   "devDependencies": {
+    "@types/react-router-dom": "^5.1.3",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "^1.1.0",
@@ -19,7 +20,9 @@
     "@types/react": "^16.8.14",
     "@types/react-dom": "^16.8.4",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2"
   },
   "private": true
 }

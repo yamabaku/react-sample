@@ -1,48 +1,66 @@
 import * as React from "react"; 
 import HP from "./hp";
+import Comment from "./comment";
 
-interface HPState {
+interface FieldState {
     TurtleHP: number;
     RabbitHP: number;
+    Damage: number;
+    name: string;
+    ShowFlag: boolean;
+    ClickFlag: boolean
 } 
 
-class Field extends React.Component<{},HPState> {
+class Field extends React.Component<{},FieldState> {
     constructor(props:{}) {
         super(props);
         this.state = {
             TurtleHP: 5,
             RabbitHP: 5,
+            Damage: null,
+            name: '',
+            ShowFlag: false,
+            ClickFlag: true,
         }
         this.RabbitAttack = this.RabbitAttack.bind(this)
     }
 
-    RabbitAttack ():void{
-        console.log("test1");
-        const Damage:number[] = [10,15,20,25];
+    TurtleAttack ():any {
+        if(this.state.ClickFlag) {
+            this.setState({ClickFlag: false});
+            this.setState({ShowFlag:true});
+            const Damage:number[] = [10,15,20,25];
+            let TurtleAttack = Damage[Math.floor(Math.random()* Damage.length)];
+            this.setState({Damage: TurtleAttack});
+            this.setState({name: 'カメ・ウェザー'})
+            let RestHP = this.state.RabbitHP - TurtleAttack / 20; 
+            if (RestHP > 0){
+                this.setState({RabbitHP: RestHP}); 
+            } else {
+                this.setState({RabbitHP: 0});
+                return location.href ="/Trutle_win"
+
+            }
+            setTimeout(this.RabbitAttack ,800);
+        }else {
+            this.setState({ClickFlag:false});
+        }
+    }
+
+    RabbitAttack ():any{
+        const Damage:number[] = [15,15,15,15,15,20,20,20,20,20,100000000];
         let RabbitAttack = Damage[Math.floor(Math.random()* Damage.length)];
+        this.setState({Damage: RabbitAttack});
+        this.setState({name: 'ウサギ・パッキャオ'})
         let RestHP = this.state.TurtleHP - RabbitAttack / 20; 
-        console.log(RestHP);
         if (RestHP > 0){
             this.setState({TurtleHP: RestHP}); 
         } else {
             this.setState({TurtleHP: 0});
+            setTimeout(()=>{return location.href ="/Rabbit_win"},500);
         }
+        this.setState({ClickFlag: true});
     }
-
-    TurtleAttack ():void {
-        console.log("test");
-        const Damage:number[] = [10,15,20,25];
-        let TurtleAttack = Damage[Math.floor(Math.random()* Damage.length)];
-        let RestHP = this.state.RabbitHP - TurtleAttack / 20; 
-        console.log(RestHP);
-        if (RestHP > 0){
-            this.setState({RabbitHP: RestHP}); 
-        } else {
-            this.setState({RabbitHP: 0});
-        }
-        setTimeout(this.RabbitAttack ,500);
-    }
-
 
     render () {
         const turtle = "-turtle"
@@ -53,22 +71,23 @@ class Field extends React.Component<{},HPState> {
         let  RabbitHP:{} = {
             width:`${this.state.RabbitHP}rem`,
         } 
-
+        let ShowDamage = this.state.ShowFlag ? <Comment Damage = {this.state.Damage} name = {this.state.name} /> : '';
         return (
             <div className="l-field">
                 <div className="p-field">
                     <div className="p-field__wrapper">
                         <div className="p-field__character-box -turtle">
-                            <img src="./images/kame.png" alt="キャラクターの画像" className="p-field__character"/>
+                            <img src="./images/kame.png" alt="キャラクターの画像" className="p-field__character -turtle"/>
                             <HP Character = {turtle} HP = {TurtleHP} />
                             <button className="p-field__button -view" onClick = { () => this.TurtleAttack()}>たたかう</button>
                         </div>
                         <div className="p-field__character-box -rabbit">
                             <HP Character = {rabbit} HP = {RabbitHP} />
-                            <img src="./images/usagi.png" alt="キャラクターの画像" className="p-field__character"/>
+                            <img src="./images/usagi.png" alt="キャラクターの画像" className="p-field__character -rabbit"/>
                         </div>
                     </div>
                 </div>
+                {ShowDamage}
             </div>
         );
     }
